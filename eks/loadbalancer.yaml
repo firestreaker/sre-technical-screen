@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecr
+  labels:
+    app: eks-test
+spec:
+  type: LoadBalancer
+  selector:
+    app: eks-test
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
